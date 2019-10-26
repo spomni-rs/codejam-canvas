@@ -4,8 +4,11 @@
     "glob": "^7.1.5",
     "gulp": "^4.0.2",
     "require-dir": "^1.2.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
   },
   "scripts": {
+    "build": "webpack",
     "clean-dist": "gulp clean"
   }
 }
