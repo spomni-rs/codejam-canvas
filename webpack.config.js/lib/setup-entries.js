@@ -21,5 +21,4 @@ module.exports = function setupEntries(pattern, srcPath){
       return res;
     }, {})
   ;
-
 }
