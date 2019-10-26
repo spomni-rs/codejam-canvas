@@ -9,6 +9,7 @@ module.exports = function setupEntries(pattern, srcPath){
 
       let name = path
         .relative(srcPath, filePath)
+        .replace(/\\/g, `/`)
         .split('.')
         .reverse()
         .splice(1)

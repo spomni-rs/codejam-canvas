@@ -13,8 +13,8 @@ module.exports = function setupStatic(pattern) {
       name: `[name].[ext]`,
       outputPath: (url, resourcePath, context) => {
         let src = path.join(rootPath, srcPath);
-        return path.relative(src, resourcePath);
-      }
+        return path.relative(src, resourcePath).replace(/\\/g, `/`);
+      },
     }
   }
 }

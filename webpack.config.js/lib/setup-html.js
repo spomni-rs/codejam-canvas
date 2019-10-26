@@ -10,6 +10,7 @@ module.exports = function setupHtml(pattern, srcPath) {
 
       let name = path
         .relative(srcPath, filePath)
+        .replace(/\\/g, `/`)
         .split('.')
         .reverse()
         .splice(1)
@@ -21,7 +22,7 @@ module.exports = function setupHtml(pattern, srcPath) {
         filename: `${name}.html`,
         template: filePath,
         chunks: [
-          path.join('js', name)
+          path.join('js', name).replace(/\\/g, `/`)
         ]
       }))
 
