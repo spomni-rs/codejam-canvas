@@ -22,6 +22,12 @@ module.exports = {
 
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        use: [
+          'html-loader'
+        ]
+      },
       setupStatic(/\.(svg|png|jpg|jpeg|gif)$/i), // to the same relative path
       setupStatic(/\.(woff|woff2|eot|ttf|otf)$/i) // to the same relative path
     ]
