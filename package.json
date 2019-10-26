@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "del": "^5.1.0",
+    "glob": "^7.1.5",
+    "gulp": "^4.0.2",
+    "require-dir": "^1.2.0",
+  },
+  "scripts": {
+    "clean-dist": "gulp clean"
+  }
+}
