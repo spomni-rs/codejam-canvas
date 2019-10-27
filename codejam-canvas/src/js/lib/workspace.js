@@ -23,5 +23,13 @@ export default class Workspace {
       'RSLogo'
     );
 
+    setTimeout(() => {
+      this.viewport.draw('4x4')
+    }, 1000);
+
+    setTimeout(() => {
+      this.viewport.draw('32x32')
+    }, 2000);
+
   }
 }
