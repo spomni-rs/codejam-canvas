@@ -1,5 +1,7 @@
 @import "@material/drawer/mdc-drawer";
 @import "@material/list/mdc-list";
+@import "@material/form-field/mdc-form-field";
+@import "@material/radio/mdc-radio";
 
 .workspace {
 
@@ -31,6 +33,12 @@
     left: 50%;
 
     transform: translate(-50%, -50%);
+  }
+
+  &__slides {
+    position: absolute;
+    top: 130px;
+    right: 30px;
   }
 
   .colors {

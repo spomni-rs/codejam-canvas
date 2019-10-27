@@ -55,6 +55,19 @@
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-3.1.0.tgz#a6f6cacd1e0c9b60dc82f2f3bb2de8cfd472252b"
   integrity sha512-aXAa1Pv6w32URacE9LfMsl9zI6hFwx1K0Lp3Xpyf4rAkmaAB6z0gOkhicOrVFc0f64YheJgHjE7hJFieVenQdw==
 
+"@material/form-field@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@material/form-field/-/form-field-3.2.0.tgz#be35298526d7436922636ec8b163733814cfafa7"
+  integrity sha512-4XjZGy1S966IOUxFaRAKcZOvr5qqvx8r1RMvfCsEzTB45y9Lo2puilNyCtatVAULRxCwszZb7Kbd++cpmMpzZA==
+  dependencies:
+    "@material/base" "^3.1.0"
+    "@material/feature-targeting" "^3.1.0"
+    "@material/ripple" "^3.2.0"
+    "@material/rtl" "^3.2.0"
+    "@material/theme" "^3.1.0"
+    "@material/typography" "^3.1.0"
+    tslib "^1.9.3"
+
 "@material/icon-button@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@material/icon-button/-/icon-button-3.2.0.tgz#7a132fffe5be347db77281d63e7e4c5ffe0881ca"
@@ -79,6 +92,19 @@
     "@material/shape" "^3.1.0"
     "@material/theme" "^3.1.0"
     "@material/typography" "^3.1.0"
+    tslib "^1.9.3"
+
+"@material/radio@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@material/radio/-/radio-3.2.0.tgz#3037825653b89c63dad956c46f9c511f598aefc8"
+  integrity sha512-TQeaGsCyIkj1zruOe9g4Kj4p6T3vBRyWvVT15xTbHWBSkzJw2L917EEwIKxQtxqps3E7WEbzkBh0jPRZj8CMVQ==
+  dependencies:
+    "@material/animation" "^3.1.0"
+    "@material/base" "^3.1.0"
+    "@material/dom" "^3.1.0"
+    "@material/feature-targeting" "^3.1.0"
+    "@material/ripple" "^3.2.0"
+    "@material/theme" "^3.1.0"
     tslib "^1.9.3"
 
 "@material/ripple@^3.2.0":
