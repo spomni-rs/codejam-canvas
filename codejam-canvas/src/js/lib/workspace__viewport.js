@@ -10,7 +10,8 @@ module.exports = class Viewport {
     this.images = {
       '4x4': require('../../assets/canvas-data/4x4.json'),
       '32x32': require('../../assets/canvas-data/32x32.json'),
-      'RSLogo': require('../../assets/canvas-data/image.png')
+      'RSLogo': require('../../assets/canvas-data/image.png'),
+      'clean': null
     }
 
     if (imageName){
@@ -23,7 +24,7 @@ module.exports = class Viewport {
   }
 
   draw(imageName){
-    if (!this.images[imageName]){
+    if (this.images[imageName] === undefined){
       throw new Error(`Unknow image identifier "${imageName}"`);
     }
 
@@ -91,5 +92,9 @@ module.exports = class Viewport {
       ctx.drawImage(image, 0, 0, this.node.width, this.node.height);
     }
     image.src = this.images['RSLogo'];
+  }
+
+  _drawclean(){
+    console.log('drawclean()');
   }
 }
