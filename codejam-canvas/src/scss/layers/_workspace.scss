@@ -42,7 +42,6 @@
   }
 
   .colors {
-
     &__icon {
 
       width: 20px;
@@ -61,19 +60,19 @@
 
     &__prev-color {
       .colors__icon {
-        background-color: #41F795;
+        background-color: #41f795;
       }
     }
 
     &__red {
       .colors__icon {
-        background-color: #F74141;
+        background-color: #f74141;
       }
     }
 
     &__blue {
       .colors__icon {
-        background-color: #41B6F7;
+        background-color: #41b6f7;
       }
     }
   }

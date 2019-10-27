@@ -1,30 +1,30 @@
-let elementResizeEvent = require('element-resize-event');
+let elementResizeEvent = require(`element-resize-event`);
 
 module.exports = class Viewport {
 
-  constructor(node, imageName){
+  constructor(node, imageName) {
     this.node = node;
-    this.ctx = this.node.getContext('2d');
+    this.ctx = this.node.getContext(`2d`);
 
-    this._currentImage = null
+    this._currentImage = null;
     this.images = {
-      '4x4': require('../../assets/canvas-data/4x4.json'),
-      '32x32': require('../../assets/canvas-data/32x32.json'),
-      'RSSLogo': require('../../assets/canvas-data/image.png'),
+      '4x4': require(`../../assets/canvas-data/4x4.json`),
+      '32x32': require(`../../assets/canvas-data/32x32.json`),
+      'RSSLogo': require(`../../assets/canvas-data/image.png`),
       'Clean': null
-    }
+    };
 
-    if (imageName){
-      this.draw(imageName)
+    if (imageName) {
+      this.draw(imageName);
     }
 
     elementResizeEvent(this.node, () => {
       this.draw(this._currentImage);
-    })
+    });
   }
 
-  draw(imageName){
-    if (this.images[imageName] === undefined){
+  draw(imageName) {
+    if (this.images[imageName] === undefined) {
       throw new Error(`Unknow image identifier "${imageName}"`);
     }
 
@@ -35,17 +35,17 @@ module.exports = class Viewport {
     this[`_draw${imageName}`]();
   }
 
-  _calculateScale(imageWidth, imageHeight){
+  _calculateScale(imageWidth, imageHeight) {
     return [
       this.node.width / imageWidth,
       this.node.height / imageHeight
     ];
   }
 
-  _draw4x4(){
+  _draw4x4() {
 
     const {ctx} = this;
-    const imageData = this.images['4x4'];
+    const imageData = this.images[`4x4`];
 
     ctx.scale(...this._calculateScale(4, 4));
 
@@ -58,17 +58,17 @@ module.exports = class Viewport {
     });
   }
 
-  _draw32x32(){
+  _draw32x32() {
 
     const {ctx} = this;
     ctx.imageSmoothingEnabled = false;
 
-    let arrToUintc8 = this.images['32x32'].reduce((res, row) => {
-      return res.concat(row.reduce((res, color) => {
-        return res.concat(color);
+    let arrToUintc8 = this.images[`32x32`].reduce((res, row) => {
+      return res.concat(row.reduce((arr, color) => {
+        return arr.concat(color);
       }));
-    }, [])
-    let uintc8 = new Uint8ClampedArray(arrToUintc8)
+    }, []);
+    let uintc8 = new Uint8ClampedArray(arrToUintc8);
     let imageData = new ImageData(uintc8, 32, 32);
 
     ctx.putImageData(imageData, 0, 0);
@@ -82,7 +82,7 @@ module.exports = class Viewport {
     imageObject.src = this.node.toDataURL();
   }
 
-  _drawRSSLogo(){
+  _drawRSSLogo() {
 
     const {ctx} = this;
     ctx.imageSmoothingEnabled = true;
@@ -90,10 +90,10 @@ module.exports = class Viewport {
     let image = new Image();
     image.onload = () => {
       ctx.drawImage(image, 0, 0, this.node.width, this.node.height);
-    }
-    image.src = this.images['RSSLogo'];
+    };
+    image.src = this.images[`RSSLogo`];
   }
 
-  _drawClean(){
+  _drawClean() {
   }
-}
+};
