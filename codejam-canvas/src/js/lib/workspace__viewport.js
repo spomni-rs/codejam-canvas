@@ -13,7 +13,9 @@ module.exports = class Viewport {
       'RSLogo': require('../../assets/canvas-data/image.png')
     }
 
-    this.draw(imageName)
+    if (imageName){
+      this.draw(imageName)
+    }
 
     elementResizeEvent(this.node, () => {
       this.draw(this._currentImage);

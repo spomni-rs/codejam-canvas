@@ -20,7 +20,7 @@ export default class Workspace {
       this.node.querySelector('.workspace__viewport'),
       // '32x32'
       // '4x4'
-      'RSLogo'
+      // 'RSLogo'
     );
 
     setTimeout(() => {
