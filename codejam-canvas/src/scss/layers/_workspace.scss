@@ -1,0 +1,72 @@
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+
+.workspace {
+
+  height: calc(100vh - #{$header-height});
+
+  position: relative;
+  padding-top: $header-height;
+
+  .mdc-drawer {
+    height: auto;
+  }
+
+  &__tools {
+    position: absolute;
+    top: 130px;
+    left: 30px;
+  }
+
+  &__colors {
+    position: absolute;
+    top: 450px;
+    left: 30px;
+  }
+
+  &__viewport {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+  .colors {
+
+    &__icon {
+
+      width: 20px;
+      height: 20px;
+
+      border: 1px solid black;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    &__current-color {
+      .colors__icon {
+        background-color: #c4c4c4;
+      }
+    }
+
+    &__prev-color {
+      .colors__icon {
+        background-color: #41F795;
+      }
+    }
+
+    &__red {
+      .colors__icon {
+        background-color: #F74141;
+      }
+    }
+
+    &__blue {
+      .colors__icon {
+        background-color: #41B6F7;
+      }
+    }
+  }
+}

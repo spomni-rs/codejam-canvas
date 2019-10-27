@@ -71,7 +71,10 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               implementation: require('sass'),
-              sourceMap: true
+              sourceMap: true,
+              sassOptions: {
+                includePaths: [path.join(rootPath, `node_modules`)]
+              }
             }
           }
         ]

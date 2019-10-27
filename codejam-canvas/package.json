@@ -1,7 +1,11 @@
 {
   "devDependencies": {
+    "@material/drawer": "^3.2.0",
+    "@material/icon-button": "^3.2.0",
+    "@material/top-app-bar": "^3.2.0",
     "css-loader": "^3.2.0",
     "del": "^5.1.0",
+    "element-resize-event": "^3.0.3",
     "file-loader": "^4.2.0",
     "glob": "^7.1.5",
     "gulp": "^4.0.2",
@@ -23,5 +27,7 @@
     "watch": "webpack --watch",
     "clean-dist": "gulp clean"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@material/elevation": "^3.1.0"
+  }
 }
