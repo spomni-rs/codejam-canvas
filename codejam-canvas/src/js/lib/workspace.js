@@ -18,8 +18,9 @@ export default class Workspace {
 
     this.viewport = new viewport(
       this.node.querySelector('.workspace__viewport'),
-      '32x32'
+      // '32x32'
       // '4x4'
+      'RSLogo'
     );
 
   }

@@ -6,18 +6,17 @@ module.exports = class Viewport {
     this.node = node;
     this.ctx = this.node.getContext('2d');
 
-    this._disableSmoothing();
-
     this._currentImage = null
     this.images = {
       '4x4': require('../../assets/canvas-data/4x4.json'),
-      '32x32': require('../../assets/canvas-data/32x32.json')
+      '32x32': require('../../assets/canvas-data/32x32.json'),
+      'RSLogo': require('../../assets/canvas-data/image.png')
     }
 
     this.draw(imageName)
 
     elementResizeEvent(this.node, () => {
-      this[`_draw${this._currentImage}`]();
+      this.draw(this._currentImage);
     })
   }
 
@@ -38,11 +37,12 @@ module.exports = class Viewport {
   }
 
   _draw4x4(){
+    console.log('_draw4x4');
 
     const {ctx} = this;
-
     const imageData = this.images['4x4'];
 
+    ctx.clearRect(0, 0, this.node.width, this.node.height);
     ctx.resetTransform();
     ctx.scale(...this._calculateScale(4, 4));
 
@@ -53,12 +53,13 @@ module.exports = class Viewport {
         ctx.fillRect(x, y, 1, 1);
       });
     });
-
-    console.log('ctx.getImageData(0) = ', ctx.getImageData(0, 0, 32, 32));
   }
 
   _draw32x32(){
+
     const {ctx} = this;
+
+    ctx.imageSmoothingEnabled = false;
 
     let arrToUintc8 = this.images['32x32'].reduce((res, row) => {
       return res.concat(row.reduce((res, color) => {
@@ -77,15 +78,25 @@ module.exports = class Viewport {
     let imageObject = new Image();
     imageObject.onload = () => {
       ctx.clearRect(0, 0, this.node.width, this.node.height);
-      ctx.drawImage(imageObject, 0, 0);
+      ctx.drawImage(imageObject, 0, 0, this.node.width, this.node.height);
     };
     imageObject.src = this.node.toDataURL();
   }
 
-  _disableSmoothing(){
-    this.ctx.mozImageSmoothingEnabled = false;
-    this.ctx.webkitImageSmoothingEnabled = false;
-    this.ctx.msImageSmoothingEnabled = false;
-    this.ctx.imageSmoothingEnabled = false;
+  _drawRSLogo(){
+    console.log('_drawRSLogo');
+
+    const {ctx} = this;
+    ctx.clearRect(0, 0, this.node.width, this.node.height);
+    ctx.resetTransform();
+    ctx.imageSmoothingEnabled = true;
+
+    let image = new Image();
+    image.onload = () => {
+      ctx.drawImage(image, 0, 0, this.node.width, this.node.height);
+    }
+    image.src = this.images['RSLogo'];
+
+    console.log('image = ', image);
   }
 }
