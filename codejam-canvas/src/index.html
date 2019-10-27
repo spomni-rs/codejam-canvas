@@ -10,13 +10,13 @@
 
   <header class="header mdc-top-app-bar mdc-elevation--z4">
     <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+      <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
         <span class="mdc-top-app-bar__title">Codejam Canvas</span>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+      </div>
+      <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" >
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="More">more_vert</button>
-      </section>
+      </div>
     </div>
   </header>
 
@@ -90,14 +90,14 @@
 
           <a class="colors__current-color mdc-list-item" href="#">
             <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
-              <div class="colors__icon"></div>
+              <span class="colors__icon"></span>
             </i>
             <span class="mdc-list-item__text">Current color</span>
           </a>
 
           <a class="colors__prev-color mdc-list-item" href="#">
             <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
-              <div class="colors__icon"></div>
+              <span class="colors__icon"></span>
             </i>
             <span class="mdc-list-item__text">prev color</span>
           </a>
@@ -106,14 +106,14 @@
 
           <a class="colors__red mdc-list-item" href="#">
             <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
-              <div class="colors__icon"></div>
+              <span class="colors__icon"></span>
             </i>
             <span class="mdc-list-item__text">red</span>
           </a>
 
           <a class="colors__blue mdc-list-item" href="#">
             <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
-              <div class="colors__icon"></div>
+              <span class="colors__icon"></span>
             </i>
             <span class="mdc-list-item__text">blue</span>
           </a>
@@ -127,9 +127,9 @@
       <div class="mdc-drawer__content">
         <nav class="mdc-list">
 
-          <a class="slides__4x4 mdc-list-item" href="#">
+          <div class="slides__4x4 mdc-list-item">
             <div class="mdc-form-field">
-              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
+              <div class="material-icons mdc-list-item__graphic" aria-hidden="true">
                 <div class="mdc-radio">
                   <input class="mdc-radio__native-control" type="radio" id="radio-4x4" name="slide-name" value="4x4">
                   <div class="mdc-radio__background">
@@ -137,14 +137,14 @@
                     <div class="mdc-radio__inner-circle"></div>
                   </div>
                 </div>
-              </i>
+              </div>
               <label for="radio-4x4" class="mdc-list-item__text">4x4</label>
             </div>
-          </a>
+          </div>
 
-          <a class="slides__32x32 mdc-list-item" href="#">
+          <div class="slides__32x32 mdc-list-item">
             <div class="mdc-form-field">
-              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
+              <div class="material-icons mdc-list-item__graphic" aria-hidden="true">
                 <div class="mdc-radio">
                   <input class="mdc-radio__native-control" type="radio" id="radio-32x32" name="slide-name" value="32x32">
                   <div class="mdc-radio__background">
@@ -152,14 +152,14 @@
                     <div class="mdc-radio__inner-circle"></div>
                   </div>
                 </div>
-              </i>
+              </div>
               <label for="radio-32x32" class="mdc-list-item__text">32x32</label>
             </div>
-          </a>
+          </div>
 
-          <a class="slides__rss-logo mdc-list-item" href="#">
+          <div class="slides__rss-logo mdc-list-item">
             <div class="mdc-form-field">
-              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
+              <div class="material-icons mdc-list-item__graphic" aria-hidden="true">
                 <div class="mdc-radio">
                   <input class="mdc-radio__native-control" type="radio" id="radio-rss-logo" name="slide-name" value="RSSLogo">
                   <div class="mdc-radio__background">
@@ -167,14 +167,14 @@
                     <div class="mdc-radio__inner-circle"></div>
                   </div>
                 </div>
-              </i>
+              </div>
               <label for="radio-rss-logo" class="mdc-list-item__text">RSS Logo</label>
             </div>
-          </a>
+          </div>
 
-          <a class="slides__clean mdc-list-item" href="#">
+          <div class="slides__clean mdc-list-item">
             <div class="mdc-form-field">
-              <i class="material-icons mdc-list-item__graphic" aria-hidden="true">
+              <div class="material-icons mdc-list-item__graphic" aria-hidden="true">
                 <div class="mdc-radio">
                   <input class="mdc-radio__native-control" type="radio" id="radio-clean" name="slide-name" value="Clean">
                   <div class="mdc-radio__background">
@@ -182,10 +182,10 @@
                     <div class="mdc-radio__inner-circle"></div>
                   </div>
                 </div>
-              </i>
+              </div>
               <label for="radio-clean" class="mdc-list-item__text">Clean</label>
             </div>
-          </a>
+          </div>
 
         </nav>
       </div>
