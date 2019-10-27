@@ -10,8 +10,8 @@ module.exports = class Viewport {
     this.images = {
       '4x4': require('../../assets/canvas-data/4x4.json'),
       '32x32': require('../../assets/canvas-data/32x32.json'),
-      'RSLogo': require('../../assets/canvas-data/image.png'),
-      'clean': null
+      'RSSLogo': require('../../assets/canvas-data/image.png'),
+      'Clean': null
     }
 
     if (imageName){
@@ -82,7 +82,7 @@ module.exports = class Viewport {
     imageObject.src = this.node.toDataURL();
   }
 
-  _drawRSLogo(){
+  _drawRSSLogo(){
 
     const {ctx} = this;
     ctx.imageSmoothingEnabled = true;
@@ -91,10 +91,10 @@ module.exports = class Viewport {
     image.onload = () => {
       ctx.drawImage(image, 0, 0, this.node.width, this.node.height);
     }
-    image.src = this.images['RSLogo'];
+    image.src = this.images['RSSLogo'];
   }
 
-  _drawclean(){
-    console.log('drawclean()');
+  _drawClean(){
+    console.log('drawClean()');
   }
 }

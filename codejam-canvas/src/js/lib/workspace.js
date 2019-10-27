@@ -36,17 +36,25 @@ export default class Workspace {
       this.node.querySelector('.workspace__viewport'),
       // '32x32'
       // '4x4'
-      // 'RSLogo'
-      'clean'
+      'RSSLogo'
+      // 'clean'
     );
 
-    // setTimeout(() => {
-    //   this.viewport.draw('4x4')
-    // }, 1000);
+    setTimeout(() => {
+      this.viewport.draw('4x4')
+    }, 2000);
 
-    // setTimeout(() => {
-    //   this.viewport.draw('32x32')
-    // }, 2000);
+    setTimeout(() => {
+      this.viewport.draw('32x32')
+    }, 4000);
+
+    setTimeout(() => {
+      this.viewport.draw('RSSLogo')
+    }, 6000);
+
+    setTimeout(() => {
+      this.viewport.draw('RSSLogo')
+    }, 8000);
 
   }
 }
