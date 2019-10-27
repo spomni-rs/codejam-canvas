@@ -10,6 +10,20 @@ export default class Workspace {
 
     this.node = node;
 
+    Array
+      .from(
+        this.node.querySelectorAll('.workspace__slides input')
+      )
+      .forEach((node) => {
+        node.addEventListener('change', () => {
+          if (node.checked){
+            this.viewport.draw(node.value)
+          }
+        })
+      })
+    ;
+
+
     this.lists = Array
       .from(
         this.node.querySelectorAll(`.mdc-list`)
@@ -33,28 +47,23 @@ export default class Workspace {
     ;
 
     this.viewport = new viewport(
-      this.node.querySelector('.workspace__viewport'),
-      // '32x32'
-      // '4x4'
-      'RSSLogo'
-      // 'clean'
-    );
+      this.node.querySelector('.workspace__viewport'));
 
-    setTimeout(() => {
-      this.viewport.draw('4x4')
-    }, 2000);
+    // setTimeout(() => {
+    //   this.viewport.draw('4x4')
+    // }, 2000);
 
-    setTimeout(() => {
-      this.viewport.draw('32x32')
-    }, 4000);
+    // setTimeout(() => {
+    //   this.viewport.draw('32x32')
+    // }, 4000);
 
-    setTimeout(() => {
-      this.viewport.draw('RSSLogo')
-    }, 6000);
+    // setTimeout(() => {
+    //   this.viewport.draw('RSSLogo')
+    // }, 6000);
 
-    setTimeout(() => {
-      this.viewport.draw('RSSLogo')
-    }, 8000);
+    // setTimeout(() => {
+    //   this.viewport.draw('RSSLogo')
+    // }, 8000);
 
   }
 }

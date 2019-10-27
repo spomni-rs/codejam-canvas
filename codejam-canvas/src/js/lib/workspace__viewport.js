@@ -95,6 +95,5 @@ module.exports = class Viewport {
   }
 
   _drawClean(){
-    console.log('drawClean()');
   }
 }
